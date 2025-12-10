@@ -39,4 +39,5 @@ df |>
     caption = "Patent counts include utility patents (inventions) 
     plus plant patents, and exclude design patents"
   )
-ggsave("figures/patents_per_year.png", width = 3, height = 3)
+ggsave("figures/patents_per_year.png", width = 3, height = 3, dpi = 1200)
+ggsave("figures/patents_per_year.svg", width = 3, height = 3)

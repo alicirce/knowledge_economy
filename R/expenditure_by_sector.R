@@ -27,7 +27,7 @@ rd_to_sales <- tribble(
   "Software",               0.129,
   "Computer engineering",   0.102
 )
-rd_to_sales |>
+p_expenditure <- rd_to_sales |>
   ggplot() +
   aes(x = rnd_to_sales, y = sector) +
   geom_bar(
@@ -52,7 +52,27 @@ rd_to_sales |>
   labs(
     x = "R&D expenditure relative to sales",
   )
+p_expenditure
 ggsave(
   "figures/expenditures_sales_ratio_by_sector.png", 
+  width = 6, height = 2.5, dpi = 1200
+)
+ggsave(
+  "figures/expenditures_sales_ratio_by_sector.svg", 
   width = 6, height = 2.5
+)
+
+p_expenditure +
+  theme(
+    legend.position = "bottom",
+    legend.justification = "right"
+  )
+
+ggsave(
+  "figures/expenditures_sales_ratio_by_sector_2.png", 
+  width = 4, height = 2.5, dpi = 1200
+)
+ggsave(
+  "figures/expenditures_sales_ratio_by_sector_2.svg", 
+  width = 4, height = 2.5
 )
